@@ -8,12 +8,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-
-//        if (savedInstanceState == null) {
-//            supportFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                add<LoginFragment>(R.id.loginFragment)
-//            }
-//        }
     }
 }

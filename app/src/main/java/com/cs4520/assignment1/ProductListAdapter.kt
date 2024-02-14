@@ -1,13 +1,11 @@
 package com.cs4520.assignment1
 
 import android.graphics.Color
-import android.media.audiofx.DynamicsProcessing.Eq
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
 class ProductListAdapter(private val dataset: List<Product>): RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>() {

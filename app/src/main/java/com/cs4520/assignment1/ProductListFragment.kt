@@ -1,13 +1,11 @@
 package com.cs4520.assignment1
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.cs4520.assignment1.databinding.ProductListFragmentBinding
 
 class ProductListFragment : Fragment() {
