@@ -1,7 +1,6 @@
 package com.cs4520.assignment1
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,10 +18,13 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
                 && binding.loginPwInput.text.toString() == "admin"
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = LoginFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,11 +32,14 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
 
         binding.loginBtn.setOnClickListener {
             if (verifyLogin()) {
-                Log.i("pressed login", "log")
+                binding.loginUsernameInput.text.clear();
+                binding.loginPwInput.text.clear();
                 findNavController().navigate(R.id.action_loginFragment_to_productListFragment)
             } else {
-                val message = "Invalid login"
-                val toast = Toast.makeText(this.context, "Invalid user credentials", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(
+                    this.context,
+                    "Invalid user credentials",
+                    Toast.LENGTH_SHORT)
                 toast.show()
             }
         }
