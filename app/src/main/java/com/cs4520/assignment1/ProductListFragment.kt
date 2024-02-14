@@ -16,10 +16,14 @@ class ProductListFragment : Fragment() {
     private val binding get() = _binding!!
 
     private fun processProduct(p: List<Any?>): Product {
+        val date = if (p[2] != null) p[2].toString() else null
         if (p[1].toString() == "Equipment") {
-            return Equipment(p[0].toString(), p[2].toString(), p[3].toString().toInt())
+            return Equipment(p[0].toString(), date, p[3].toString().toInt())
+        } else if (p[1].toString() == "Food") {
+            return Food(p[0].toString(), date, p[3].toString().toInt())
+        } else {
+            throw IllegalArgumentException("Invalid product type")
         }
-        return Food(p[0].toString(), p[2].toString(), p[3].toString().toInt())
     }
 
     override fun onCreateView(

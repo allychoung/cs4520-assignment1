@@ -1,5 +1,6 @@
 package com.cs4520.assignment1
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,8 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.cs4520.assignment1.databinding.LoginFragmentBinding
-import com.cs4520.assignment1.databinding.ProductListItemBinding
 
 class ProductListAdapter(private val dataset: List<Product>): RecyclerView.Adapter<ProductListAdapter.ProductViewHolder>() {
 
@@ -20,13 +19,14 @@ class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(p: Product) {
         nameText.text = p.name
-        if (p is Food) {
-            imageView.setBackgroundResource(R.drawable.food)
-        } else if (p is Equipment) {
-            imageView.setBackgroundResource(R.drawable.equipment)
-        }
-        dateText.text = p.expirationDate
-        priceText.text = p.price.toString()
+        imageView.setBackgroundResource(p.getBackgroundImg())
+//        if (p.expirationDate == null) {
+//            itemView.visibility = View.INVISIBLE
+//        } else {
+//            dateText.text = p.expirationDate
+//        }
+        priceText.text = "$ ${p.price}"
+//        itemView.setBackgroundColor(itemView.resources.getColor(R.color.yellow))
     }
 }
 
