@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/light_red"
-    android:padding="10dp">
+    android:padding="15dp">
 
     <ImageView
-        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/product_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -19,7 +19,8 @@
 
     <TextView
         android:textColor="@color/text"
-        android:layout_marginRight="10dp"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/product_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/product_image"
@@ -28,7 +29,7 @@
 
     <TextView
         android:textColor="@color/text"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:id="@+id/product_date"
         app:layout_constraintStart_toEndOf="@id/product_image"
         app:layout_constraintBottom_toTopOf="@id/product_price"
@@ -38,7 +39,7 @@
 
     <TextView
         android:textColor="@color/text"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/login_btn_text"
         android:id="@+id/product_price"
         app:layout_constraintTop_toBottomOf="@id/product_date"

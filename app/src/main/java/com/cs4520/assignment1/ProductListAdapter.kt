@@ -1,6 +1,7 @@
 package com.cs4520.assignment1
 
 import android.graphics.Color
+import android.media.audiofx.DynamicsProcessing.Eq
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,13 +21,17 @@ class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun bind(p: Product) {
         nameText.text = p.name
         imageView.setBackgroundResource(p.getBackgroundImg())
-//        if (p.expirationDate == null) {
-//            itemView.visibility = View.INVISIBLE
-//        } else {
-//            dateText.text = p.expirationDate
-//        }
+        if (p.expirationDate == null) {
+            dateText.visibility = View.INVISIBLE
+        } else {
+            dateText.text = p.expirationDate
+        }
         priceText.text = "$ ${p.price}"
-//        itemView.setBackgroundColor(itemView.resources.getColor(R.color.yellow))
+        if (p is Food) {
+            itemView.setBackgroundColor(Color.parseColor("#FFD965"))
+        } else if (p is Equipment) {
+            itemView.setBackgroundColor(Color.parseColor("#E06666"))
+        }
     }
 }
 
